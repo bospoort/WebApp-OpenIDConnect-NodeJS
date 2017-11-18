@@ -1,7 +1,7 @@
 
 exports.creds = {
   // Required
-  identityMetadata: 'https://login.microsoftonline.com/<tenant_name>.onmicrosoft.com/.well-known/openid-configuration', 
+  identityMetadata: 'https://login.microsoftonline.com/maartenb.onmicrosoft.com/.well-known/openid-configuration', 
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/.well-known/openid-configuration'
   //
   // or you can use the common endpoint
@@ -18,7 +18,7 @@ exports.creds = {
   responseMode: 'form_post', 
 
   // Required, the reply URL registered in AAD for your app
-  redirectUrl: 'http://localhost:3000/auth/openid/return', 
+  redirectUrl: 'https://maartenb-nodeweb.run.aws-usw02-pr.ice.predix.io/auth/openid/return', 
 
   // Required if we use http for redirectUrl
   allowHttpForRedirectUrl: true,
@@ -81,7 +81,7 @@ exports.destroySessionUrl = 'https://login.microsoftonline.com/common/oauth2/log
 // If you want to use the mongoDB session store for session middleware; otherwise we will use the default
 // session store provided by express-session.
 // Note that the default session store is designed for development purpose only.
-exports.useMongoDBSessionStore = true;
+exports.useMongoDBSessionStore = false;
 
 // If you want to use mongoDB, provide the uri here for the database.
 exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
